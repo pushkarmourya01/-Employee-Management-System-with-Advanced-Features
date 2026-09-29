@@ -42,6 +42,15 @@ public class Employee {
     @Column(name = "salary")
     private Double salary;
 
+    /**
+     * Owning side: foreign key department_id isi table mein banta hai.
+     * FetchType.LAZY zaroori hai — ManyToOne ka default EAGER hai jo har employee ke saath
+     * department ki extra query maar deta hai.
+     */
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "department_id")
+    private Department department;
+
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;

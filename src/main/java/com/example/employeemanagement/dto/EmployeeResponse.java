@@ -13,6 +13,8 @@ public record EmployeeResponse(
         String phone,
         String position,
         Double salary,
+        Long departmentId,
+        String departmentName,
         LocalDateTime createdAt,
         LocalDateTime updatedAt
 ) {
