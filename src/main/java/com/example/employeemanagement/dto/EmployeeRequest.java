@@ -32,6 +32,8 @@ public record EmployeeRequest(
         String position,
 
         @Positive(message = "Salary must be greater than 0")
-        Double salary
+        Double salary,
+
+        Long departmentId
 ) {
 }
